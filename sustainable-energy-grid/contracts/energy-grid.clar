@@ -1,7 +1,7 @@
 /// energy-grid.clar
 
-(use-trait energy-token-trait './energy-token')
-(impl-trait .energy-token.energy-token-trait)
+(use-trait './energy-token' energy-token-trait) ; Correct path without .clar
+(impl-trait energy-token-trait) ; Implement trait
 
 (define-data-var total-supplied-energy uint u0)
 (define-data-var grid-balance uint u0)
