@@ -1,0 +1,24 @@
+[project]
+name = "energy-grid"
+requirements = []
+costs_version = 2
+[contracts.energy-grid]
+path = "contracts/energy-grid.clar"
+depends_on = []
+
+[contracts.energy-token]
+path = "contracts/energy-token.clar"
+depends_on = ["energy-grid"]
+
+[contracts.meters]
+path = "contracts/meters.clar"
+depends_on = ["energy-grid"]
+
+[repl.analysis]
+passes = ["check_checker"]
+
+[repl.analysis.check_checker]
+strict = true
+trusted_sender = false
+trusted_caller = false
+callee_filter = false
